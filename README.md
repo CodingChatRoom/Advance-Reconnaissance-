@@ -23,6 +23,7 @@
   - [4. Brute Force (SSH)](#4-brute-force-ssh)
   - [5. Vulnerability Scanning](#5-vulnerability-scanning)
 - [🧠 Real World Usage](#-real-world-usage)
+- [🔓 Vulenabilities](#Vulenabilities)
 - [⚠️ Legal Notice](#️-legal-notice)
 - [👨‍💻 Author](#-author)
 - [📜 License](#-license)
@@ -140,6 +141,29 @@ These commands are frequently used in penetration testing engagements for:
 * ✅ Identifying vulnerable services and open ports
 * ✅ Brute forcing weak SSH credentials
 * ✅ Initial attack surface enumeration
+
+---
+
+## 🔓 Common Ports & Their Vulnerabilities
+
+| Port | Service | Version Example         | Vulnerability/CVE                | How Hackers Exploit It |
+|------|---------|--------------------------|----------------------------------|-------------------------|
+| 21   | FTP     | vsftpd 2.3.4             | CVE-2011-2523 (Backdoor Shell)   | Attackers exploit this version's hidden backdoor by sending a crafted smiley `:)` in the username to get root shell. |
+| 22   | SSH     | OpenSSH < 7.4            | CVE-2018-15473 (Username Enumeration) | Hackers enumerate valid users before brute forcing, saving time and avoiding detection. |
+| 23   | Telnet  | Any                      | Unencrypted Protocol             | Credentials can be sniffed in plaintext using Wireshark or MITM attacks. |
+| 25   | SMTP    | Exim < 4.91              | CVE-2019-10149 (RCE)             | Attackers send crafted email headers to execute code remotely and escalate privilege. |
+| 53   | DNS     | BIND 9.x                 | CVE-2015-5477 (DoS)              | Used to crash DNS servers with malformed packets, often in DDoS chains. |
+| 80   | HTTP    | Apache 2.4.49            | CVE-2021-41773 (Path Traversal RCE) | Hackers exploit improper URL sanitization to access sensitive files like `/etc/passwd` or execute code. |
+| 110  | POP3    | Dovecot 2.2.x            | CVE-2017-14461 (Auth Bypass)     | Hackers gain unauthorized access by bypassing authentication mechanisms. |
+| 139  | NetBIOS | Windows SMB              | CVE-1999-0519 (Null Session)     | Allows attackers to enumerate users and shares without login. |
+| 445  | SMB     | Windows 7/XP             | CVE-2017-0144 (EternalBlue)      | Used in WannaCry ransomware; allows remote code execution via SMBv1. |
+| 3306 | MySQL   | MySQL < 5.7              | CVE-2016-6662 (Config File Injection) | Remote attackers write to my.cnf to inject malicious code. |
+| 3389 | RDP     | Windows RDP              | CVE-2019-0708 (BlueKeep)         | Exploits RDP to execute code without credentials — leads to wormable attacks. |
+| 5432 | Postgres| PostgreSQL < 9.3         | CVE-2013-1899 (DoS/Code Exec)    | Attackers can modify data, escalate privileges, or crash the service. |
+| 8080 | HTTP    | Apache Tomcat < 9.0.30   | CVE-2020-1938 (Ghostcat)         | Exploits AJP protocol to access sensitive files or run code remotely. |
+
+> 🔐 Note: Always check for real-time CVE updates at [https://cve.mitre.org](https://cve.mitre.org)
+
 
 ---
 
