@@ -14,19 +14,20 @@
 
 ## 📁 Table of Contents
 
-- [📖 About](#-about)
-- [⚙️ Requirements](#️-requirements)
-- [🚀 Commands & Explanations](#-commands--explanations)
+- [📖 About](#about)
+- [⚙️ Requirements](#requirements)
+- [🚀 Commands & Explanations](#commands--explanations)
   - [1. Host Discovery](#1-host-discovery)
   - [2. Port Scanning](#2-port-scanning)
   - [3. Version & OS Detection](#3-version--os-detection)
   - [4. Brute Force (SSH)](#4-brute-force-ssh)
   - [5. Vulnerability Scanning](#5-vulnerability-scanning)
-- [🧠 Real World Usage](#-real-world-usage)
-- [🔓 Vulenabilities](#Vulenabilities)
-- [⚠️ Legal Notice](#️-legal-notice)
-- [👨‍💻 Author](#-author)
-- [📜 License](#-license)
+- [🧠 Real World Usage](#real-world-usage)
+- [🔓 Vulnerabilities](#common-ports--their-vulnerabilities)
+- [⚠️ Legal Notice](#legal-notice)
+- [👨‍💻 Author](#author)
+- [📜 License](#license)
+
 
 ---
 
